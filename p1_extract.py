@@ -11,12 +11,8 @@ df.size
 df.sample(5)
 
 
-## save as csv to WK9/code/model_dev/data/raw
-df.to_csv('WK9/code/model_dev/data/raw/crime_data.csv', index=False)
+## save as csv to datasets/raw
+df.to_csv('datasets/death_rate.csv', index=False)
 
-## save as pickle to WK9/code/model_dev/data/raw
-df.to_pickle('WK9/code/model_dev/data/raw/crime_data.pkl')
-
-
-# LAPD reporting districts 
-## original link: https://geohub.lacity.org/datasets/39b404bd22804807ba0f0e1628e585f2/explore
+## save as pickle to datasets/raw
+df.to_pickle('datasets/death_rate.pkl')
