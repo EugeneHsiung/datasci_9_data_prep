@@ -4,4 +4,5 @@
 
 ### Dataset # 1: [Popular_Baby_Names](https://github.com/EugeneHsiung/datasci_9_data_prep/blob/main/Datasets/Popular_Baby_Names.csv)
 + This dataset contains: Popular Baby Names by Sex and Ethnic Group Data were collected through civil birth registration. Each record represents the ranking of a baby name in the order of frequency. Data can be used to represent the popularity of a name.
++ The intended machine learning task for this dataset is classification
 + 
