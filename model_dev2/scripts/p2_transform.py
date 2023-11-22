@@ -53,5 +53,19 @@ df_mapping_race_or_hispanic_origin
 ## save mapping to csv
 df_mapping_race_or_hispanic_origin.to_csv('/home/eugenehsiung/datasci_9_data_prep/model_dev2/data/processed/mapping_race_or_hispanic_origin.csv', index=False)
 
-## Save the whole thing
-df.to_csv('model_dev1/data/processed/processed_female_teen_birth_rate.csv', index=False)
+## perform ordinal encoding on birth_rate
+enc = OrdinalEncoder()
+enc.fit(df[['birth_rate']])
+df['birth_rate'] = enc.transform(df[['birth_rate']])
+
+## create dataframe with mapping for birth_rate
+df_mapping_birth_rate = pd.DataFrame(enc.categories_[0], columns=['birth_rate'])
+df_mapping_birth_rate['birth_rate'] = df_mapping_birth_rate.index
+df_mapping_birth_rate
+
+## save mapping to csv
+df_mapping_birth_rate.to_csv('/home/eugenehsiung/datasci_9_data_prep/model_dev2/data/processed/mapping_birth_rate.csv', index=False)
+
+
+## Save in processed folder
+df.to_csv('model_dev2/data/processed/processed_female_teen_birth_rate.csv', index=False)

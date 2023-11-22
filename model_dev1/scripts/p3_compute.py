@@ -21,7 +21,8 @@ scaler.fit(X)
 pickle.dump(scaler, open('model_dev1/models/scaler.sav', 'wb'))  # Saving the scaler for later use
 
 # Fitting the scaler to the features and transform
-X_scaled = scaler.transform(X)
+X_scaled = scaler.transform(X) # Scaling the feature matrix
+X_scaled
 
 # Splitting the scaled data into training, validation, and testing sets (70%, 15%, 15%)
 X_train, X_temp, y_train, y_temp = train_test_split(X_scaled, y, test_size=0.3, random_state=42)
