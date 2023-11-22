@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Loading the dataset
-# Original link: https://catalog.data.gov/dataset/2012-sat-results/resource/d6de35c7-7c4a-4b61-9fa1-232cba5d80af
+# Original link: https://catalog.data.gov/dataset/nchs-teen-birth-rates-for-females-by-age-group-race-and-hispanic-origin-united-states
 datalink = 'https://data.cdc.gov/api/views/e8kx-wbww/rows.csv?accessType=DOWNLOAD'
 df = pd.read_csv(datalink)
 print(df)
