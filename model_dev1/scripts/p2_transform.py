@@ -12,10 +12,10 @@ df.columns
 df.columns = df.columns.str.lower().str.replace(' ', '_')
 df.columns
 
-# Getting the data type
+# data type
 df.dtypes
 
-# Keeping columns
+# Keeping all columns
 to_keep = [
     'year_of_birth',
     'gender',
@@ -24,6 +24,7 @@ to_keep = [
     'count'
 ]
 
+# keep specified columns and drop missing values
 df = df[to_keep]
 df.dropna(inplace=True)
 
@@ -57,12 +58,12 @@ enc = OrdinalEncoder()
 enc.fit(df[['ethnicity']])
 df['ethnicity'] = enc.transform(df[['ethnicity']])
 
-df_mapping_date = pd.DataFrame(enc.categories_[0], columns=['ethnicity'])
-df_mapping_date['ethnicity_ordinal'] = df_mapping_date.index
-df_mapping_date
+df_mapping_ethnicity = pd.DataFrame(enc.categories_[0], columns=['ethnicity'])
+df_mapping_ethnicity['ethnicity_ordinal'] = df_mapping_date.index
+df_mapping_ethnicity
 
 # Saving the mapping as a CSV for ethnicity
-df_mapping_date.to_csv('/home/eugenehsiung/datasci_9_data_prep/model_dev1/data/processed/mapping_ethnicity.csv', index=False)
+df_mapping_ethnicity.to_csv('/home/eugenehsiung/datasci_9_data_prep/model_dev1/data/processed/mapping_ethnicity.csv', index=False)
 
 # Saving the mapping as a CSV for both ethnicity and year_of_birth
 df.to_csv('model_dev1/data/processed/popular_data_names.csv', index=False)
