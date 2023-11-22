@@ -3,13 +3,13 @@ from sklearn.preprocessing import OrdinalEncoder
 
 # Getting the raw dataset
 df = pd.read_pickle('/home/eugenehsiung/datasci_9_data_prep/model_dev1/scripts/data/popular_data_names.pkl')
-print(df)
+df
 
 # Getting the column names
 df.columns
 
-# Cleaning the column names
-df.columns = df.columns.str.lower().str.replace(' ', '_').str.replace('-', '_').str.replace('(', '').str.replace(')', '')
+## Clean columns, make columns all lower case and removing white spaces
+df.columns = df.columns.str.lower().str.replace(' ', '_')
 df.columns
 
 # Getting the data type
